@@ -1,0 +1,10 @@
+html{
+  background-color: hsl(0, 0%, 21%);
+}
+
+.image{
+  border: 2px solid white;
+  border-radius: 50%;
+  padding: 4px;
+  cursor: pointer;
+}
