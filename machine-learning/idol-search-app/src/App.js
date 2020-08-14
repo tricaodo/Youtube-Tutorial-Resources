@@ -1,12 +1,16 @@
 import React from 'react';
-import DownLoad from "./components/DownLoad";
+import FetchIdols from "./components/FetchIdols";
+import Idols from "./components/Idols";
+import Search from "./components/Search";
 import './App.css';
 
 
 function App() {
   return (
     <div className="App">
-      <DownLoad />
+      {/* <FetchIdols /> */}
+      <Idols />
+      {/* <Search /> */}
     </div>
   );
 }

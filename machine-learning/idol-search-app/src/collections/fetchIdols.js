@@ -44,7 +44,6 @@ const filterResponse = (idolId, idolName, data) => {
 
 // generate & download json file.
 export const generateFile = idolInfos => {
-    // const jsonFormat = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(idolInfos));
     const jsonFormat = `data:text/json;charset=utf-8,${encodeURIComponent(JSON.stringify(idolInfos))}`;
     return (
         <a href={jsonFormat} download="idols.json">Download</a>

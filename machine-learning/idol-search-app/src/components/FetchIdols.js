@@ -1,11 +1,11 @@
 import React from "react";
 import { generateFile, bingApiCalled } from "../collections/fetchIdols";
 
-class DownLoad extends React.Component {
+class FetchIdols extends React.Component {
     state = { idolInfos: undefined };
     async componentDidMount() {
-        // const idolInfos = await bingApiCalled();
-        // this.setState({ idolInfos })
+        const idolInfos = await bingApiCalled();
+        this.setState({ idolInfos })
     }
     render() {
         if (this.state.idolInfos) {
@@ -18,4 +18,4 @@ class DownLoad extends React.Component {
     }
 }
 
-export default DownLoad;
+export default FetchIdols;
