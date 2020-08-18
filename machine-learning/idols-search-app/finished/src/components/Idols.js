@@ -73,11 +73,11 @@ class Idols extends React.Component {
             // tạo profile cho every idol để lưu trữ hình ảnh
             const response = await faceApi.post(`/persongroups/${groupId}/persons`, { name: idol.idolName, userData: idol.id });
             if(response.status === 200){
-                console.log(`======== Create profile for ${idol.name} successfully. ========`);
+                console.log(`======== Create profile for ${idol.idolName} successfully. ========`);
                 const images = idol.images;
                 for(let i = 0; i < images.length; i++){
                     // insert images vào idol vừa tạo.
-                    this.insertImage(groupId, response.data.personId, images[i]);
+                    await this.insertImage(groupId, response.data.personId, images[i]);
                     this.sleep(4 * 1000);
                 }
             }
@@ -87,7 +87,7 @@ class Idols extends React.Component {
     // submit images cho mỗi idol.
     insertImage = async (groupId, personId, imageUrl) => {
         try{
-            await faceApi.post(`/persongroup/${groupId}/persons/${personId}/persistedFaces`, {url: imageUrl})
+            await faceApi.post(`/persongroups/${groupId}/persons/${personId}/persistedfaces`, {url: imageUrl})
             console.log("Submit successfully " + imageUrl);
         }catch (error){
             console.error(error);
